@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.noveFormeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.josNestoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formaStatistikeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuForms = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFormGen = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFormChart = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFormStats = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFormChartN = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.noveFormeToolStripMenuItem});
+            this.menuForms});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -47,35 +48,47 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // noveFormeToolStripMenuItem
+            // menuForms
             // 
-            this.noveFormeToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.noveFormeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nestoToolStripMenuItem,
-            this.josNestoToolStripMenuItem,
-            this.formaStatistikeToolStripMenuItem});
-            this.noveFormeToolStripMenuItem.Name = "noveFormeToolStripMenuItem";
-            this.noveFormeToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.noveFormeToolStripMenuItem.Text = "Nove forme";
+            this.menuForms.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.menuForms.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemFormGen,
+            this.menuItemFormChart,
+            this.menuItemFormStats});
+            this.menuForms.Name = "menuForms";
+            this.menuForms.Size = new System.Drawing.Size(82, 20);
+            this.menuForms.Text = "Nove forme";
             // 
-            // nestoToolStripMenuItem
+            // menuItemFormGen
             // 
-            this.nestoToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.nestoToolStripMenuItem.Name = "nestoToolStripMenuItem";
-            this.nestoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nestoToolStripMenuItem.Text = "Forma Generator";
+            this.menuItemFormGen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.menuItemFormGen.Name = "menuItemFormGen";
+            this.menuItemFormGen.Size = new System.Drawing.Size(180, 22);
+            this.menuItemFormGen.Text = "Forma Generator";
+            this.menuItemFormGen.Click += new System.EventHandler(this.menuItemFormGen_Click);
             // 
-            // josNestoToolStripMenuItem
+            // menuItemFormChart
             // 
-            this.josNestoToolStripMenuItem.Name = "josNestoToolStripMenuItem";
-            this.josNestoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.josNestoToolStripMenuItem.Text = "Forma Grafikon";
+            this.menuItemFormChart.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemFormChartN});
+            this.menuItemFormChart.Name = "menuItemFormChart";
+            this.menuItemFormChart.Size = new System.Drawing.Size(180, 22);
+            this.menuItemFormChart.Text = "Forma Grafikon";
+            this.menuItemFormChart.Click += new System.EventHandler(this.menuItemFormChart_Click);
             // 
-            // formaStatistikeToolStripMenuItem
+            // menuItemFormStats
             // 
-            this.formaStatistikeToolStripMenuItem.Name = "formaStatistikeToolStripMenuItem";
-            this.formaStatistikeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.formaStatistikeToolStripMenuItem.Text = "Forma Statistike";
+            this.menuItemFormStats.Name = "menuItemFormStats";
+            this.menuItemFormStats.Size = new System.Drawing.Size(180, 22);
+            this.menuItemFormStats.Text = "Forma Statistike";
+            this.menuItemFormStats.Click += new System.EventHandler(this.menuItemFormStats_Click);
+            // 
+            // menuItemFormChartN
+            // 
+            this.menuItemFormChartN.Name = "menuItemFormChartN";
+            this.menuItemFormChartN.Size = new System.Drawing.Size(180, 22);
+            this.menuItemFormChartN.Text = "Prikazi zadnjih N";
+            this.menuItemFormChartN.Click += new System.EventHandler(this.menuItemFormChartN_Click);
             // 
             // FormMain
             // 
@@ -97,10 +110,11 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem noveFormeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nestoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem josNestoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formaStatistikeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuForms;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFormGen;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFormChart;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFormStats;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFormChartN;
     }
 }
 

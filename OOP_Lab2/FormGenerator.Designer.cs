@@ -34,13 +34,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSVTemp = new System.Windows.Forms.Button();
+            this.btnSVPressure = new System.Windows.Forms.Button();
+            this.btnSVHumidity = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -48,27 +49,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Temperatura";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "Pritisak";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.label3.Text = "Vlaznost";
             // 
             // textBox1
             // 
@@ -91,46 +92,49 @@
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 5;
             // 
-            // button1
+            // btnSVTemp
             // 
-            this.button1.Location = new System.Drawing.Point(293, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 20);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSVTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSVTemp.Location = new System.Drawing.Point(293, 36);
+            this.btnSVTemp.Name = "btnSVTemp";
+            this.btnSVTemp.Size = new System.Drawing.Size(30, 20);
+            this.btnSVTemp.TabIndex = 6;
+            this.btnSVTemp.Text = "*";
+            this.btnSVTemp.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnSVPressure
             // 
-            this.button2.Location = new System.Drawing.Point(293, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 20);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSVPressure.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSVPressure.Location = new System.Drawing.Point(293, 71);
+            this.btnSVPressure.Name = "btnSVPressure";
+            this.btnSVPressure.Size = new System.Drawing.Size(30, 20);
+            this.btnSVPressure.TabIndex = 7;
+            this.btnSVPressure.Text = "*";
+            this.btnSVPressure.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnSVHumidity
             // 
-            this.button3.Location = new System.Drawing.Point(293, 103);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(30, 20);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSVHumidity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSVHumidity.Location = new System.Drawing.Point(293, 103);
+            this.btnSVHumidity.Name = "btnSVHumidity";
+            this.btnSVHumidity.Size = new System.Drawing.Size(30, 20);
+            this.btnSVHumidity.TabIndex = 8;
+            this.btnSVHumidity.Text = "*";
+            this.btnSVHumidity.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnUpdate
             // 
-            this.button4.Location = new System.Drawing.Point(204, 140);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(103, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(187, 145);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(136, 42);
+            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.Text = "Prosledi";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 180);
+            this.checkBox1.Location = new System.Drawing.Point(12, 214);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 10;
@@ -140,7 +144,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(12, 203);
+            this.checkBox2.Location = new System.Drawing.Point(12, 237);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(80, 17);
             this.checkBox2.TabIndex = 11;
@@ -149,30 +153,41 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(204, 200);
+            this.textBox4.Location = new System.Drawing.Point(204, 234);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(24, 20);
             this.textBox4.TabIndex = 12;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Location = new System.Drawing.Point(9, 145);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(35, 13);
+            this.lblError.TabIndex = 13;
+            this.lblError.Text = "label4";
             // 
             // FormGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(375, 232);
+            this.ClientSize = new System.Drawing.Size(355, 276);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnSVHumidity);
+            this.Controls.Add(this.btnSVPressure);
+            this.Controls.Add(this.btnSVTemp);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormGenerator";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -188,12 +203,13 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSVTemp;
+        private System.Windows.Forms.Button btnSVPressure;
+        private System.Windows.Forms.Button btnSVHumidity;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label lblError;
     }
 }
