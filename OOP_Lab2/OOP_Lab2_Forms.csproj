@@ -71,6 +71,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormStandardValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStandardValue.Designer.cs">
+      <DependentUpon>FormStandardValue.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormStatisticalData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStandardValue.resx">
+      <DependentUpon>FormStandardValue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStatisticalData.resx">
       <DependentUpon>FormStatisticalData.cs</DependentUpon>
@@ -114,6 +123,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataClasses\DataClasses.csproj">
+      <Project>{c5cf312b-08c4-4579-9b25-a2033d592d67}</Project>
+      <Name>DataClasses</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{4466f2b7-b5c0-495f-beee-ef58e55595b9}</Project>
       <Name>Interfaces</Name>

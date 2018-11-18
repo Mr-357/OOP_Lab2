@@ -104,6 +104,7 @@
             this.btnSVTemp.TabIndex = 6;
             this.btnSVTemp.Text = "*";
             this.btnSVTemp.UseVisualStyleBackColor = true;
+            this.btnSVTemp.Click += new System.EventHandler(this.btnSVTemp_Click);
             // 
             // btnSVPressure
             // 

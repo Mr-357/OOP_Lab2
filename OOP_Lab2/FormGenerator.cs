@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataClasses;
+using Interfaces;
 
 namespace OOP_Lab2
 {
@@ -27,6 +29,12 @@ namespace OOP_Lab2
         private void CheckBounds()
         {
             
+        }
+
+        private void btnSVTemp_Click(object sender, EventArgs e)
+        {
+            Form f = new FormStandardValue(Checker<Temperature>.Instance);
+            f.ShowDialog();
         }
     }
 }

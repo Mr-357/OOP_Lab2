@@ -9,15 +9,17 @@ using DataClasses;
 
 namespace Interfaces
 {
-    interface IChecker
+    public interface IChecker
     {
         bool Check(string toCheck, out String error);
+        String TypeName();
     }
 
     public class Checker<T> : IChecker where T:WeatherData   // pravimo instance za T u ovom slucaju temp,pressure,humidity, trebalo bi da radi?
     {
         private double _min;
         private double _max;
+        public static String _type;
         private WeatherData check;
         private static Checker<T> _instance = null;
         private Checker()
@@ -26,7 +28,10 @@ namespace Interfaces
 
         public double Min { get => _min; set => _min = value; }
         public double Max { get => _max; set => _max = value; }
-        
+        public String TypeName()
+        {
+            return _type;
+        }
         public static Checker<T> Instance
         {
             get
@@ -34,6 +39,7 @@ namespace Interfaces
                 if(_instance==null)
                 {
                     _instance = new Checker<T>();
+                    
                 }
                 return _instance;
             }
@@ -41,6 +47,7 @@ namespace Interfaces
 
         public bool Check(string toCheck, out string error)
         {
+
             try
             {
                 check = check.Parse(toCheck);
