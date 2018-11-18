@@ -16,10 +16,10 @@ namespace OOP_Lab2
         {
             InitializeComponent();
         }
-
+        #region EventHandlers
         private void menuItemFormGen_Click(object sender, EventArgs e)
         {
-            FormGenerator f = new FormGenerator(); // (this)
+            FormGenerator f = new FormGenerator(this); // (this)
             f.MdiParent = this;
             f.Show();
         }
@@ -46,5 +46,6 @@ namespace OOP_Lab2
             f.MdiParent = this;
             f.Show();
         }
+        #endregion
     }
 }

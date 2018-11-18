@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tBoxTemp = new System.Windows.Forms.TextBox();
+            this.tBoxPressure = new System.Windows.Forms.TextBox();
+            this.tBoxHumidity = new System.Windows.Forms.TextBox();
             this.btnSVTemp = new System.Windows.Forms.Button();
             this.btnSVPressure = new System.Windows.Forms.Button();
             this.btnSVHumidity = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.chBoxIgnoreLimits = new System.Windows.Forms.CheckBox();
+            this.chBoxAutoSend = new System.Windows.Forms.CheckBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
+            this.eProvideTemp = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.eProvideTemp)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,26 +74,26 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Vlaznost";
             // 
-            // textBox1
+            // tBoxTemp
             // 
-            this.textBox1.Location = new System.Drawing.Point(116, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.tBoxTemp.Location = new System.Drawing.Point(155, 37);
+            this.tBoxTemp.Name = "tBoxTemp";
+            this.tBoxTemp.Size = new System.Drawing.Size(100, 20);
+            this.tBoxTemp.TabIndex = 3;
             // 
-            // textBox2
+            // tBoxPressure
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 72);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.tBoxPressure.Location = new System.Drawing.Point(155, 72);
+            this.tBoxPressure.Name = "tBoxPressure";
+            this.tBoxPressure.Size = new System.Drawing.Size(100, 20);
+            this.tBoxPressure.TabIndex = 4;
             // 
-            // textBox3
+            // tBoxHumidity
             // 
-            this.textBox3.Location = new System.Drawing.Point(116, 104);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.tBoxHumidity.Location = new System.Drawing.Point(155, 107);
+            this.tBoxHumidity.Name = "tBoxHumidity";
+            this.tBoxHumidity.Size = new System.Drawing.Size(100, 20);
+            this.tBoxHumidity.TabIndex = 5;
             // 
             // btnSVTemp
             // 
@@ -131,29 +134,29 @@
             this.btnUpdate.Text = "Prosledi";
             this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chBoxIgnoreLimits
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 214);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chBoxIgnoreLimits.AutoSize = true;
+            this.chBoxIgnoreLimits.Location = new System.Drawing.Point(12, 214);
+            this.chBoxIgnoreLimits.Name = "chBoxIgnoreLimits";
+            this.chBoxIgnoreLimits.Size = new System.Drawing.Size(97, 17);
+            this.chBoxIgnoreLimits.TabIndex = 10;
+            this.chBoxIgnoreLimits.Text = "Ignorisi granice";
+            this.chBoxIgnoreLimits.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chBoxAutoSend
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(12, 237);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(80, 17);
-            this.checkBox2.TabIndex = 11;
-            this.checkBox2.Text = "checkBox2";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chBoxAutoSend.AutoSize = true;
+            this.chBoxAutoSend.Location = new System.Drawing.Point(12, 237);
+            this.chBoxAutoSend.Name = "chBoxAutoSend";
+            this.chBoxAutoSend.Size = new System.Drawing.Size(294, 17);
+            this.chBoxAutoSend.TabIndex = 11;
+            this.chBoxAutoSend.Text = "Automatsko generisanje podataka,interval u sekundama:";
+            this.chBoxAutoSend.UseVisualStyleBackColor = true;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(204, 234);
+            this.textBox4.Location = new System.Drawing.Point(312, 234);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(24, 20);
             this.textBox4.TabIndex = 12;
@@ -163,9 +166,14 @@
             this.lblError.AutoSize = true;
             this.lblError.Location = new System.Drawing.Point(9, 145);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(35, 13);
+            this.lblError.Size = new System.Drawing.Size(93, 13);
             this.lblError.TabIndex = 13;
-            this.lblError.Text = "label4";
+            this.lblError.Text = "Lose vrednosti za:";
+            this.lblError.Visible = false;
+            // 
+            // eProvideTemp
+            // 
+            this.eProvideTemp.ContainerControl = this;
             // 
             // FormGenerator
             // 
@@ -175,21 +183,22 @@
             this.ClientSize = new System.Drawing.Size(355, 276);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chBoxAutoSend);
+            this.Controls.Add(this.chBoxIgnoreLimits);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSVHumidity);
             this.Controls.Add(this.btnSVPressure);
             this.Controls.Add(this.btnSVTemp);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tBoxHumidity);
+            this.Controls.Add(this.tBoxPressure);
+            this.Controls.Add(this.tBoxTemp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormGenerator";
-            this.Text = "Form1";
+            this.Text = "Form Generator";
+            ((System.ComponentModel.ISupportInitialize)(this.eProvideTemp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,16 +209,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tBoxTemp;
+        private System.Windows.Forms.TextBox tBoxPressure;
+        private System.Windows.Forms.TextBox tBoxHumidity;
         private System.Windows.Forms.Button btnSVTemp;
         private System.Windows.Forms.Button btnSVPressure;
         private System.Windows.Forms.Button btnSVHumidity;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox chBoxIgnoreLimits;
+        private System.Windows.Forms.CheckBox chBoxAutoSend;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.ErrorProvider eProvideTemp;
     }
 }

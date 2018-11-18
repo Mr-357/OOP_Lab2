@@ -12,9 +12,21 @@ namespace OOP_Lab2
 {
     public partial class FormGenerator : Form
     {
+        private Form LocalParent { get; set; }
         public FormGenerator()
         {
             InitializeComponent();
+        }
+        public FormGenerator(Form parent)
+        {
+            InitializeComponent();
+            LocalParent = parent;
+            CheckBounds();
+        }
+
+        private void CheckBounds()
+        {
+            
         }
     }
 }
