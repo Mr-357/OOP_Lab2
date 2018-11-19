@@ -78,5 +78,12 @@ namespace OOP_Lab2
             fc.MdiParent = this;
             fc.Show();
         }
+
+        private void menuItemFormZadatak_Click(object sender, EventArgs e)
+        {
+            FormZadatak f = new FormZadatak();
+            f.MdiParent = this;
+            f.Show();
+        }
     }
 }

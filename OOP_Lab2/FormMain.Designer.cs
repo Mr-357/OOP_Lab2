@@ -32,10 +32,11 @@
             this.menuForms = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemFormGen = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemFormChart = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemFormStats = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemFormChartT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemFormChartP = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemFormChartH = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFormStats = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFormZadatak = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@
             this.menuForms.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemFormGen,
             this.menuItemFormChart,
-            this.menuItemFormStats});
+            this.menuItemFormStats,
+            this.menuItemFormZadatak});
             this.menuForms.Name = "menuForms";
             this.menuForms.Size = new System.Drawing.Size(82, 20);
             this.menuForms.Text = "Nove forme";
@@ -80,6 +82,27 @@
             this.menuItemFormChart.Text = "Forma Grafikon";
             this.menuItemFormChart.Click += new System.EventHandler(this.menuItemFormChart_Click);
             // 
+            // menuItemFormChartT
+            // 
+            this.menuItemFormChartT.Name = "menuItemFormChartT";
+            this.menuItemFormChartT.Size = new System.Drawing.Size(141, 22);
+            this.menuItemFormChartT.Text = "Temperatura";
+            this.menuItemFormChartT.Click += new System.EventHandler(this.menuItemFormChartT_Click);
+            // 
+            // menuItemFormChartP
+            // 
+            this.menuItemFormChartP.Name = "menuItemFormChartP";
+            this.menuItemFormChartP.Size = new System.Drawing.Size(141, 22);
+            this.menuItemFormChartP.Text = "Pritisak";
+            this.menuItemFormChartP.Click += new System.EventHandler(this.menuItemFormChartP_Click);
+            // 
+            // menuItemFormChartH
+            // 
+            this.menuItemFormChartH.Name = "menuItemFormChartH";
+            this.menuItemFormChartH.Size = new System.Drawing.Size(141, 22);
+            this.menuItemFormChartH.Text = "Vlaznost";
+            this.menuItemFormChartH.Click += new System.EventHandler(this.menuItemFormChartH_Click);
+            // 
             // menuItemFormStats
             // 
             this.menuItemFormStats.Name = "menuItemFormStats";
@@ -87,26 +110,12 @@
             this.menuItemFormStats.Text = "Forma Statistike";
             this.menuItemFormStats.Click += new System.EventHandler(this.menuItemFormStats_Click);
             // 
-            // menuItemFormChartT
+            // menuItemFormZadatak
             // 
-            this.menuItemFormChartT.Name = "menuItemFormChartT";
-            this.menuItemFormChartT.Size = new System.Drawing.Size(180, 22);
-            this.menuItemFormChartT.Text = "Temperatura";
-            this.menuItemFormChartT.Click += new System.EventHandler(this.menuItemFormChartT_Click);
-            // 
-            // menuItemFormChartP
-            // 
-            this.menuItemFormChartP.Name = "menuItemFormChartP";
-            this.menuItemFormChartP.Size = new System.Drawing.Size(180, 22);
-            this.menuItemFormChartP.Text = "Pritisak";
-            this.menuItemFormChartP.Click += new System.EventHandler(this.menuItemFormChartP_Click);
-            // 
-            // menuItemFormChartH
-            // 
-            this.menuItemFormChartH.Name = "menuItemFormChartH";
-            this.menuItemFormChartH.Size = new System.Drawing.Size(180, 22);
-            this.menuItemFormChartH.Text = "Vlaznost";
-            this.menuItemFormChartH.Click += new System.EventHandler(this.menuItemFormChartH_Click);
+            this.menuItemFormZadatak.Name = "menuItemFormZadatak";
+            this.menuItemFormZadatak.Size = new System.Drawing.Size(180, 22);
+            this.menuItemFormZadatak.Text = "Forma Zadatak";
+            this.menuItemFormZadatak.Click += new System.EventHandler(this.menuItemFormZadatak_Click);
             // 
             // FormMain
             // 
@@ -135,6 +144,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemFormChartT;
         private System.Windows.Forms.ToolStripMenuItem menuItemFormChartP;
         private System.Windows.Forms.ToolStripMenuItem menuItemFormChartH;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFormZadatak;
     }
 }
 

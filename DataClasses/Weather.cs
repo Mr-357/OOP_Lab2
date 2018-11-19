@@ -92,7 +92,7 @@ namespace DataClasses
         }
         public override string ToString()
         {
-            return _value+ " °C";
+            return Math.Round(_value)+ " °C";
         }
 
     }
@@ -129,7 +129,7 @@ namespace DataClasses
         }
         public override string ToString()
         {
-            return _value + " kPa";
+            return Math.Round(_value) + " kPa";
         }
     }
     public class Humidity : WeatherData
@@ -161,7 +161,7 @@ namespace DataClasses
         }
         public override string ToString()
         {
-            return _value + " %";
+            return Math.Round(_value) + " %";
         }
     }
     public static class Logarithm
