@@ -162,6 +162,7 @@
             this.chBoxAutoSend.TabIndex = 11;
             this.chBoxAutoSend.Text = "Automatsko generisanje podataka,interval u sekundama:";
             this.chBoxAutoSend.UseVisualStyleBackColor = true;
+            this.chBoxAutoSend.CheckedChanged += new System.EventHandler(this.chBoxAutoSend_CheckedChanged);
             // 
             // tBoxInterval
             // 
@@ -193,6 +194,10 @@
             // eProvideHumidity
             // 
             this.eProvideHumidity.ContainerControl = this;
+            // 
+            // timerAutoUpdate
+            // 
+            this.timerAutoUpdate.Tick += new System.EventHandler(this.timerAutoUpdate_Tick);
             // 
             // FormGenerator
             // 

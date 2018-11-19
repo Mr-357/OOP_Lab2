@@ -31,6 +31,9 @@ namespace OOP_Lab2
             string tmp;
             checker.Check(tBoxMin.Text, out tmp);
             checker.SetMin(tBoxMin.Text);
+            checker.Check(tBoxMax.Text, out tmp);
+            checker.SetMax(tBoxMax.Text);
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 

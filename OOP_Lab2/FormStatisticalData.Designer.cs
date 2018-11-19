@@ -31,15 +31,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tBoxTemp = new System.Windows.Forms.TextBox();
+            this.tBoxPressure = new System.Windows.Forms.TextBox();
+            this.tBoxHumidity = new System.Windows.Forms.TextBox();
+            this.lblStatsTemp = new System.Windows.Forms.Label();
+            this.lblStatsPressure = new System.Windows.Forms.Label();
+            this.lblStatsHumidity = new System.Windows.Forms.Label();
+            this.chBoxStatN = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tBoxNum = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -47,121 +47,120 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Temperatura";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "Pritisak";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.label3.Text = "Vlaznost";
             // 
-            // textBox1
+            // tBoxTemp
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.tBoxTemp.Location = new System.Drawing.Point(104, 21);
+            this.tBoxTemp.Name = "tBoxTemp";
+            this.tBoxTemp.Size = new System.Drawing.Size(100, 20);
+            this.tBoxTemp.TabIndex = 3;
             // 
-            // textBox2
+            // tBoxPressure
             // 
-            this.textBox2.Location = new System.Drawing.Point(104, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
+            this.tBoxPressure.Location = new System.Drawing.Point(104, 61);
+            this.tBoxPressure.Name = "tBoxPressure";
+            this.tBoxPressure.Size = new System.Drawing.Size(100, 20);
+            this.tBoxPressure.TabIndex = 4;
             // 
-            // textBox3
+            // tBoxHumidity
             // 
-            this.textBox3.Location = new System.Drawing.Point(104, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.tBoxHumidity.Location = new System.Drawing.Point(104, 103);
+            this.tBoxHumidity.Name = "tBoxHumidity";
+            this.tBoxHumidity.Size = new System.Drawing.Size(100, 20);
+            this.tBoxHumidity.TabIndex = 5;
             // 
-            // label4
+            // lblStatsTemp
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(248, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
+            this.lblStatsTemp.AutoSize = true;
+            this.lblStatsTemp.Location = new System.Drawing.Point(248, 24);
+            this.lblStatsTemp.Name = "lblStatsTemp";
+            this.lblStatsTemp.Size = new System.Drawing.Size(0, 13);
+            this.lblStatsTemp.TabIndex = 6;
             // 
-            // label5
+            // lblStatsPressure
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(248, 64);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "label5";
+            this.lblStatsPressure.AutoSize = true;
+            this.lblStatsPressure.Location = new System.Drawing.Point(248, 64);
+            this.lblStatsPressure.Name = "lblStatsPressure";
+            this.lblStatsPressure.Size = new System.Drawing.Size(0, 13);
+            this.lblStatsPressure.TabIndex = 7;
             // 
-            // label6
+            // lblStatsHumidity
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(248, 106);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "label6";
+            this.lblStatsHumidity.AutoSize = true;
+            this.lblStatsHumidity.Location = new System.Drawing.Point(248, 106);
+            this.lblStatsHumidity.Name = "lblStatsHumidity";
+            this.lblStatsHumidity.Size = new System.Drawing.Size(0, 13);
+            this.lblStatsHumidity.TabIndex = 8;
             // 
-            // checkBox1
+            // chBoxStatN
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(15, 201);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chBoxStatN.AutoSize = true;
+            this.chBoxStatN.Location = new System.Drawing.Point(15, 201);
+            this.chBoxStatN.Name = "chBoxStatN";
+            this.chBoxStatN.Size = new System.Drawing.Size(145, 17);
+            this.chBoxStatN.TabIndex = 9;
+            this.chBoxStatN.Text = "Uradi statistiku za zadnjih";
+            this.chBoxStatN.UseVisualStyleBackColor = true;
+            this.chBoxStatN.CheckedChanged += new System.EventHandler(this.chBoxStatN_CheckedChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(230, 202);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(50, 13);
             this.label7.TabIndex = 10;
-            this.label7.Text = "label7";
+            this.label7.Text = "vrednosti";
             // 
-            // textBox4
+            // tBoxNum
             // 
-            this.textBox4.Location = new System.Drawing.Point(183, 199);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(21, 20);
-            this.textBox4.TabIndex = 11;
+            this.tBoxNum.Location = new System.Drawing.Point(183, 199);
+            this.tBoxNum.Name = "tBoxNum";
+            this.tBoxNum.Size = new System.Drawing.Size(21, 20);
+            this.tBoxNum.TabIndex = 11;
+            this.tBoxNum.TextChanged += new System.EventHandler(this.tBoxNum_TextChanged);
             // 
             // FormStatisticalData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(518, 249);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tBoxNum);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.chBoxStatN);
+            this.Controls.Add(this.lblStatsHumidity);
+            this.Controls.Add(this.lblStatsPressure);
+            this.Controls.Add(this.lblStatsTemp);
+            this.Controls.Add(this.tBoxHumidity);
+            this.Controls.Add(this.tBoxPressure);
+            this.Controls.Add(this.tBoxTemp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormStatisticalData";
-            this.Text = "FormStatisticalData";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,14 +171,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox tBoxTemp;
+        private System.Windows.Forms.TextBox tBoxPressure;
+        private System.Windows.Forms.TextBox tBoxHumidity;
+        private System.Windows.Forms.Label lblStatsTemp;
+        private System.Windows.Forms.Label lblStatsPressure;
+        private System.Windows.Forms.Label lblStatsHumidity;
+        private System.Windows.Forms.CheckBox chBoxStatN;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tBoxNum;
     }
 }

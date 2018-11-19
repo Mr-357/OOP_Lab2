@@ -33,7 +33,9 @@
             this.menuItemFormGen = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemFormChart = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemFormStats = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemFormChartN = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFormChartT = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFormChartP = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemFormChartH = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +72,9 @@
             // menuItemFormChart
             // 
             this.menuItemFormChart.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItemFormChartN});
+            this.menuItemFormChartT,
+            this.menuItemFormChartP,
+            this.menuItemFormChartH});
             this.menuItemFormChart.Name = "menuItemFormChart";
             this.menuItemFormChart.Size = new System.Drawing.Size(180, 22);
             this.menuItemFormChart.Text = "Forma Grafikon";
@@ -83,12 +87,26 @@
             this.menuItemFormStats.Text = "Forma Statistike";
             this.menuItemFormStats.Click += new System.EventHandler(this.menuItemFormStats_Click);
             // 
-            // menuItemFormChartN
+            // menuItemFormChartT
             // 
-            this.menuItemFormChartN.Name = "menuItemFormChartN";
-            this.menuItemFormChartN.Size = new System.Drawing.Size(180, 22);
-            this.menuItemFormChartN.Text = "Prikazi zadnjih N";
-            this.menuItemFormChartN.Click += new System.EventHandler(this.menuItemFormChartN_Click);
+            this.menuItemFormChartT.Name = "menuItemFormChartT";
+            this.menuItemFormChartT.Size = new System.Drawing.Size(180, 22);
+            this.menuItemFormChartT.Text = "Temperatura";
+            this.menuItemFormChartT.Click += new System.EventHandler(this.menuItemFormChartT_Click);
+            // 
+            // menuItemFormChartP
+            // 
+            this.menuItemFormChartP.Name = "menuItemFormChartP";
+            this.menuItemFormChartP.Size = new System.Drawing.Size(180, 22);
+            this.menuItemFormChartP.Text = "Pritisak";
+            this.menuItemFormChartP.Click += new System.EventHandler(this.menuItemFormChartP_Click);
+            // 
+            // menuItemFormChartH
+            // 
+            this.menuItemFormChartH.Name = "menuItemFormChartH";
+            this.menuItemFormChartH.Size = new System.Drawing.Size(180, 22);
+            this.menuItemFormChartH.Text = "Vlaznost";
+            this.menuItemFormChartH.Click += new System.EventHandler(this.menuItemFormChartH_Click);
             // 
             // FormMain
             // 
@@ -114,7 +132,9 @@
         private System.Windows.Forms.ToolStripMenuItem menuItemFormGen;
         private System.Windows.Forms.ToolStripMenuItem menuItemFormChart;
         private System.Windows.Forms.ToolStripMenuItem menuItemFormStats;
-        private System.Windows.Forms.ToolStripMenuItem menuItemFormChartN;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFormChartT;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFormChartP;
+        private System.Windows.Forms.ToolStripMenuItem menuItemFormChartH;
     }
 }
 

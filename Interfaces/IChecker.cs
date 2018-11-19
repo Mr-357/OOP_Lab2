@@ -28,7 +28,7 @@ namespace Interfaces
         private Checker()
         {
         }
-        public void SetMin(string x) { _min = double.Parse(x); }
+        public void SetMin(string x) { _min = double.Parse(x); _enabled = true; }
         public void SetMax(string x) { _max = double.Parse(x); }
         public double Min { get => _min; set => _min = value; }
         public double Max { get => _max; set => _max = value; }
@@ -78,7 +78,7 @@ namespace Interfaces
             try
             {
                 check = new T();
-                check.Parse(toCheck);
+                check=check.Parse(toCheck);
                 if(!Range.InRange(check,Instance.Min,Instance.Max)&&_enabled)
                 {
                     error = "Vrednosti za"+check.Identify()+"nisu u validnom opsegu";

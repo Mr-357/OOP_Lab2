@@ -29,44 +29,56 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.chartMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cBoxLog = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMain)).BeginInit();
             this.SuspendLayout();
             // 
-            // chart1
+            // chartMain
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 0);
-            this.chart1.Name = "chart1";
+            this.chartMain.ChartAreas.Add(chartArea1);
+            this.chartMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartMain.Location = new System.Drawing.Point(0, 0);
+            this.chartMain.Name = "chartMain";
             series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(438, 316);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.chartMain.Series.Add(series1);
+            this.chartMain.Size = new System.Drawing.Size(438, 316);
+            this.chartMain.TabIndex = 0;
+            this.chartMain.DoubleClick += new System.EventHandler(this.chartMain_DoubleClick);
+            // 
+            // cBoxLog
+            // 
+            this.cBoxLog.AutoSize = true;
+            this.cBoxLog.Location = new System.Drawing.Point(0, 299);
+            this.cBoxLog.Name = "cBoxLog";
+            this.cBoxLog.Size = new System.Drawing.Size(80, 17);
+            this.cBoxLog.TabIndex = 1;
+            this.cBoxLog.Text = "Logarithmic";
+            this.cBoxLog.UseVisualStyleBackColor = true;
+            this.cBoxLog.CheckedChanged += new System.EventHandler(this.cBoxLog_CheckedChanged);
             // 
             // FormChart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 316);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.cBoxLog);
+            this.Controls.Add(this.chartMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FormChart";
             this.Text = "FormChart";
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMain)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartMain;
+        private System.Windows.Forms.CheckBox cBoxLog;
     }
 }

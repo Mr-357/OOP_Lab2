@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChartLogForm.cs">
+    <Compile Include="FormChartOptions.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChartLogForm.Designer.cs">
-      <DependentUpon>ChartLogForm.cs</DependentUpon>
+    <Compile Include="FormChartOptions.Designer.cs">
+      <DependentUpon>FormChartOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGenerator.cs">
       <SubType>Form</SubType>
@@ -83,10 +83,19 @@
     <Compile Include="FormStatisticalData.Designer.cs">
       <DependentUpon>FormStatisticalData.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormChart.resx">
       <DependentUpon>FormChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChartOptions.resx">
+      <DependentUpon>FormChartOptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGenerator.resx">
       <DependentUpon>FormGenerator.cs</DependentUpon>
@@ -99,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormStatisticalData.resx">
       <DependentUpon>FormStatisticalData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -28,23 +28,17 @@ namespace OOP_Lab2
 
         private void menuItemFormChart_Click(object sender, EventArgs e)
         {
-            FormChart f = new FormChart(); // (this,string,null)
-            f.MdiParent = this;
-            f.Show();
-            menuForms.HideDropDown();
-           // menuForms.Owner.Hide();
+           
+            //FormChart fc = new FormChart(); 
+            //fc.MdiParent = this;
+            //fc.Show();
+          
         }
 
-        private void menuItemFormChartN_Click(object sender, EventArgs e)
-        {
-            FormChart f = new FormChart(); // dialog box? message box? for numbers
-            f.MdiParent = this;
-            f.Show();
-        }
 
         private void menuItemFormStats_Click(object sender, EventArgs e)
         {
-            FormStatisticalData f = new FormStatisticalData(); // (this)
+            FormStatisticalData f = new FormStatisticalData(); 
             f.MdiParent = this;
             f.Show();
         }
@@ -60,5 +54,29 @@ namespace OOP_Lab2
             }
         }
         #endregion
+
+        private void menuItemFormChartT_Click(object sender, EventArgs e)
+        {
+
+            FormChart fc = new FormChart("Temperature",0);
+            fc.MdiParent = this;
+            fc.Show();
+        }
+
+        private void menuItemFormChartP_Click(object sender, EventArgs e)
+        {
+
+            FormChart fc = new FormChart("Pressure",0);
+            fc.MdiParent = this;
+            fc.Show();
+        }
+
+        private void menuItemFormChartH_Click(object sender, EventArgs e)
+        {
+
+            FormChart fc = new FormChart("Humidity",0);
+            fc.MdiParent = this;
+            fc.Show();
+        }
     }
 }
