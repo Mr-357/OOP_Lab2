@@ -13,23 +13,49 @@ namespace Interfaces
     {
         bool Check(string toCheck, out String error);
         String TypeName();
+        void SetMin(string x);
+        void SetMax(string x);
     }
 
-    public class Checker<T> : IChecker where T:WeatherData   // pravimo instance za T u ovom slucaju temp,pressure,humidity, trebalo bi da radi?
+    public class Checker<T> : IChecker where T:WeatherData, new()   // pravimo instance za T u ovom slucaju temp,pressure,humidity, trebalo bi da radi?
     {
         private double _min;
         private double _max;
-        public static String _type;
+        private bool _enabled=false;
+        public String _type;
         private WeatherData check;
         private static Checker<T> _instance = null;
         private Checker()
         {
         }
-
+        public void SetMin(string x) { _min = double.Parse(x); }
+        public void SetMax(string x) { _max = double.Parse(x); }
         public double Min { get => _min; set => _min = value; }
         public double Max { get => _max; set => _max = value; }
         public String TypeName()
         {
+
+            switch (typeof(T).Name)
+            {
+                case "Temperature":
+                    {
+                        _type = "temperaturu";
+                        break;
+                    }
+                case "Pressure":
+                    {
+                        _type = "pritisak";
+                        break;
+                    }
+                case "Humidity":
+                    {
+                        _type = "vlaznost";
+                        break;
+                    }
+                default:
+                    _type = "greska";
+                    break;
+            }
             return _type;
         }
         public static Checker<T> Instance
@@ -39,21 +65,23 @@ namespace Interfaces
                 if(_instance==null)
                 {
                     _instance = new Checker<T>();
-                    
                 }
                 return _instance;
             }
         }
+
+        public bool Enabled { get => _enabled; set => _enabled = value; }
 
         public bool Check(string toCheck, out string error)
         {
 
             try
             {
-                check = check.Parse(toCheck);
-                if(!Range.InRange(check,Instance.Min,Instance.Max))
+                check = new T();
+                check.Parse(toCheck);
+                if(!Range.InRange(check,Instance.Min,Instance.Max)&&_enabled)
                 {
-                    error = check.Error();
+                    error = "Vrednosti za"+check.Identify()+"nisu u validnom opsegu";
                     return false;
                 }
                 error = null;
@@ -61,7 +89,7 @@ namespace Interfaces
             }
             catch(Exception ex)
             {
-                error = ex.Message;
+                error = "Losa vrednost za"+check.Identify()+","+ex.Message;
                 return false;
             }
         }
@@ -70,7 +98,7 @@ namespace Interfaces
 
     public class Range  // mozda bespotrebno?
     {
-        public static bool InRange(WeatherData x,object min,object max)
+        public static bool InRange(WeatherData x,double min,double max)
         {
             return x > min && x < max;
         }

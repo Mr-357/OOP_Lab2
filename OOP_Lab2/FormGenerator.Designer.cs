@@ -41,10 +41,15 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.chBoxIgnoreLimits = new System.Windows.Forms.CheckBox();
             this.chBoxAutoSend = new System.Windows.Forms.CheckBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tBoxInterval = new System.Windows.Forms.TextBox();
             this.lblError = new System.Windows.Forms.Label();
             this.eProvideTemp = new System.Windows.Forms.ErrorProvider(this.components);
+            this.eProvidePressure = new System.Windows.Forms.ErrorProvider(this.components);
+            this.eProvideHumidity = new System.Windows.Forms.ErrorProvider(this.components);
+            this.timerAutoUpdate = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.eProvideTemp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eProvidePressure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eProvideHumidity)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -115,6 +120,7 @@
             this.btnSVPressure.TabIndex = 7;
             this.btnSVPressure.Text = "*";
             this.btnSVPressure.UseVisualStyleBackColor = true;
+            this.btnSVPressure.Click += new System.EventHandler(this.btnSVPressure_Click);
             // 
             // btnSVHumidity
             // 
@@ -125,6 +131,7 @@
             this.btnSVHumidity.TabIndex = 8;
             this.btnSVHumidity.Text = "*";
             this.btnSVHumidity.UseVisualStyleBackColor = true;
+            this.btnSVHumidity.Click += new System.EventHandler(this.btnSVHumidity_Click);
             // 
             // btnUpdate
             // 
@@ -134,6 +141,7 @@
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "Prosledi";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // chBoxIgnoreLimits
             // 
@@ -155,12 +163,14 @@
             this.chBoxAutoSend.Text = "Automatsko generisanje podataka,interval u sekundama:";
             this.chBoxAutoSend.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // tBoxInterval
             // 
-            this.textBox4.Location = new System.Drawing.Point(312, 234);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(24, 20);
-            this.textBox4.TabIndex = 12;
+            this.tBoxInterval.Location = new System.Drawing.Point(312, 234);
+            this.tBoxInterval.Name = "tBoxInterval";
+            this.tBoxInterval.Size = new System.Drawing.Size(24, 20);
+            this.tBoxInterval.TabIndex = 12;
+            this.tBoxInterval.Text = "1";
+            this.tBoxInterval.TextChanged += new System.EventHandler(this.tBoxInterval_TextChanged);
             // 
             // lblError
             // 
@@ -176,6 +186,14 @@
             // 
             this.eProvideTemp.ContainerControl = this;
             // 
+            // eProvidePressure
+            // 
+            this.eProvidePressure.ContainerControl = this;
+            // 
+            // eProvideHumidity
+            // 
+            this.eProvideHumidity.ContainerControl = this;
+            // 
             // FormGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,7 +201,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(355, 276);
             this.Controls.Add(this.lblError);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tBoxInterval);
             this.Controls.Add(this.chBoxAutoSend);
             this.Controls.Add(this.chBoxIgnoreLimits);
             this.Controls.Add(this.btnUpdate);
@@ -200,6 +218,8 @@
             this.Name = "FormGenerator";
             this.Text = "Form Generator";
             ((System.ComponentModel.ISupportInitialize)(this.eProvideTemp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eProvidePressure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eProvideHumidity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,8 +239,11 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.CheckBox chBoxIgnoreLimits;
         private System.Windows.Forms.CheckBox chBoxAutoSend;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tBoxInterval;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.ErrorProvider eProvideTemp;
+        private System.Windows.Forms.ErrorProvider eProvidePressure;
+        private System.Windows.Forms.ErrorProvider eProvideHumidity;
+        private System.Windows.Forms.Timer timerAutoUpdate;
     }
 }

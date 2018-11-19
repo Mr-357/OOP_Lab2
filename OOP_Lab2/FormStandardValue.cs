@@ -22,8 +22,21 @@ namespace OOP_Lab2
         {
             InitializeComponent();
             checker = check;
+            this.Text = this.Text +" "+ check.TypeName();
             lblTypeMax.Text = lblTypeMin.Text = check.TypeName();
         }
 
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            string tmp;
+            checker.Check(tBoxMin.Text, out tmp);
+            checker.SetMin(tBoxMin.Text);
+            this.Close();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

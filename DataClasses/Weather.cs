@@ -8,29 +8,34 @@ namespace DataClasses
 {
     public abstract class WeatherData
     {
+        protected double _value;
+        public double Value { get => _value; set => _value = value; }
         abstract public void DifferentMeasure(); // pretvaranje iz C u F odnosno kPa u mmHg
-        abstract public string Error(); // vraca gresku za opseg 
+        abstract public string Identify(); // vraca gresku za opseg 
         abstract public WeatherData Parse(String p);
-        protected abstract bool CompareG(object x);
-        protected abstract bool CompareL(object x);
-        public abstract object Val();  // vrednost koja mora da se prekastuje
-        public static bool operator >(WeatherData x, object y)
+
+        public object Val()
         {
-            return x.CompareG(y);
+            return _value;
+        }// vrednost koja mora da se prekastuje
+        public static bool operator >(WeatherData x, double y)
+        {
+            return x._value>y;
         }
-        public static bool operator <(WeatherData x, object y)
+        public static bool operator <(WeatherData x, double y)
         {
-            return x.CompareL(y);
+            return x._value<y;
         }
         public String test() { return "test"; }
        
     }
     public class Temperature:WeatherData
     {
-        private double _value;
+        
         private bool _state = false; //mogucnost za C / F
-        public double Value { get => _value; set => _value = value; }
+        
         public bool State { get => _state; set => _state = value; }
+        public Temperature() { }
         public Temperature(double x)
         {
             _value = x;
@@ -47,9 +52,9 @@ namespace DataClasses
             }
         }
 
-        public override string Error()
+        public override string Identify()
         {
-            return "Temperatura nije u opsegu";
+            return " temperaturu ";
         }
 
         public override WeatherData Parse(String p)
@@ -57,19 +62,51 @@ namespace DataClasses
             return new Temperature(double.Parse(p));
         }
 
-        protected override bool CompareG(object x)
+    }
+    public class Pressure : WeatherData
+    {
+        private bool _state = false; //mogucnost za kPa/mmHg
+
+        public bool State { get => _state; set => _state = value; }
+        public Pressure() {  }
+        public Pressure(double x)
         {
-            return this.Value > (double)x;
+            _value = x;
+        }
+        public override void DifferentMeasure()
+        {
+            throw new NotImplementedException();
         }
 
-        protected override bool CompareL(object x)
+        public override string Identify()
         {
-            return this.Value < (double)x;
+            return " pritisak ";
         }
 
-        public override object Val()
+        public override WeatherData Parse(string p)
         {
-            return _value;
+            return new Pressure(double.Parse(p));
+        }
+    }
+    public class Humidity : WeatherData
+    {
+        public Humidity() {  }
+        public override void DifferentMeasure()
+        {
+            return;
+        }
+        public Humidity(double x)
+        {
+            _value = x;
+        }
+        public override string Identify()
+        {
+            return " vlaznost ";
+        }
+
+        public override WeatherData Parse(string p)
+        {
+            return new Humidity(double.Parse(p));
         }
     }
 }

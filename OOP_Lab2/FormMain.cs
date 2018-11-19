@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Interfaces;
+using DataClasses;
 
 namespace OOP_Lab2
 {
@@ -45,6 +47,17 @@ namespace OOP_Lab2
             FormStatisticalData f = new FormStatisticalData(); // (this)
             f.MdiParent = this;
             f.Show();
+        }
+        public void SendUpdates(Temperature t,Pressure p,Humidity h)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                IUpdate update = f as IUpdate;
+                if(update!=null)
+                {
+                    update.Update(t, p, h);
+                }
+            }
         }
         #endregion
     }
